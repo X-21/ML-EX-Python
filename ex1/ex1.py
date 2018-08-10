@@ -16,8 +16,8 @@ def pause_func():
 
 
 def load_data(filename):
-    data = np.loadtxt(filename, delimiter=",")
-    return data
+    data_load = np.loadtxt(filename, delimiter=",")
+    return data_load
 
 
 def warm_up_exercise():
@@ -32,9 +32,9 @@ if __name__ == '__main__':
     # pause_func()
 
     # ======================= Part 2: Plotting =======================
-    data1 = load_data("ex1data1.txt")
-    X = data1[:, 0]
-    y = data1[:, 1]
+    data = load_data("ex1data1.txt")
+    X = data[:, 0]
+    y = data[:, 1]
     m = len(y)
     X = X.reshape(m, 1)
     y = y.reshape(m, 1)
