@@ -36,13 +36,15 @@ if __name__ == '__main__':
     X = data[:, 0]
     y = data[:, 1]
     m = len(y)
+    # reshape that will convert vector into matrix
     X = X.reshape(m, 1)
     y = y.reshape(m, 1)
 
+    plt.ion()
+    plt.figure()
     plt.plot(X, y, 'rx', label="Training data")
     plt.xlabel("Population of City in 10,000s")
     plt.ylabel("Profit in $10,000s")
-    # plt.show()
     # pause_func()
 
     # =================== Part 3: Cost and Gradient descent ===================
@@ -73,7 +75,8 @@ if __name__ == '__main__':
 
     plt.plot(X[:, 1], np.dot(X, theta), '-', label="Linear regression")
     plt.legend()
-    plt.show()
+    plt.pause(0.5)
+    plt.close()
 
     predict1 = np.dot(np.array(([1, 3.5])), theta)
     print('For population = 35,000, we predict a profit of ', predict1 * 10000, '\n')
@@ -107,10 +110,13 @@ if __name__ == '__main__':
     ax.plot_surface(theta0_vals, theta1_vals, J_vals, cmap="jet")
     plt.xlabel(r'$\theta_0$')
     plt.ylabel(r'$\theta_1$')
-    plt.show()
+    plt.pause(0.5)
+    plt.close()
 
+    plt.figure()
     plt.contour(theta0_vals, theta1_vals, J_vals, np.logspace(-2, 3, 20))
     plt.plot(theta[0], theta[1], "rx", markersize=20)
     plt.xlabel(r'$\theta_0$')
     plt.ylabel(r'$\theta_1$', rotation=0)
-    plt.show()
+    plt.pause(0.5)
+    plt.close()
